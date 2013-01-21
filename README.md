@@ -53,34 +53,32 @@ to separate directory names in a path.
 
 examples:
 
-<code>
-   /        "root" directory
-   
-   /usr           directory usr (sub-directory of / "root" directory)
-   
-   /usr/STRIM100  STRIM100 is a subdirectory of /usr
-</code>
+```
+/              "root" directory
+/usr           directory usr (sub-directory of / "root" directory)
+/usr/STRIM100  STRIM100 is a subdirectory of /usr
+```
 
 Moving around the file system:
 
-
-   `pwd               Show the "present working directory", or current directory.`
-   `cd                Change current directory to your HOME directory.`
-   `cd /usr/STRIM100  Change current directory to /usr/STRIM100.`
-   `cd INIT           Change current directory to INIT which is a sub-directory of the current directory.`
-   `cd ..             Change current directory to the parent directory of the current directory.`
-   `cd $STRMWORK      Change current directory to the directory defined by the environment variable 'STRMWORK'.`
-   `cd ~bob           Change the current directory to the user bob's home directory (if you have permission).`
-
+```
+pwd               Show the "present working directory", or current directory.
+cd                Change current directory to your HOME directory.
+cd /usr/STRIM100  Change current directory to /usr/STRIM100.
+cd INIT           Change current directory to INIT which is a sub-directory of the current directory.
+cd ..             Change current directory to the parent directory of the current directory.
+cd $STRMWORK      Change current directory to the directory defined by the environment variable 'STRMWORK'.
+cd ~bob           Change the current directory to the user bob's home directory (if you have permission).
+```
 
 Listing directory contents:
 
-
-   ls    list a directory
-   ls -l    list a directory in long ( detailed ) format
-
+```
+ls    list a directory
+ls -l    list a directory in long ( detailed ) format
+```
 for example:
-
+```
    $ ls -l 
    drwxr-xr-x    4 cliff    user        1024 Jun 18 09:40 WAITRON_EARNINGS
    -rw-r--r--    1 cliff    user      767392 Jun  6 14:28 scanlib.tar.gz
@@ -99,22 +97,22 @@ for example:
                 long format. Without the "d" option, ls would list the contents 
                 of any sub-directory of the current. With the "d" option, ls 
                 just lists them like regular files. 
-
+```
 
 Changing file permissions and attributes
 
-
+```
 chmod 755 file       Changes the permissions of file to be rwx for the owner, and rx for 
                      the group and the world. (7 = rwx = 111 binary. 5 = r-x = 101 binary)
 chgrp user file      Makes file belong to the group user.
 chown cliff file     Makes cliff the owner of file.
 chown -R cliff dir   Makes cliff the owner of dir and everything in its directory tree. 
-
+```
 You must be the owner of the file/directory or be root before you can do any of these things. 
 
 Moving, renaming, and copying files:
 
-
+```
 cp file1 file2          copy a file
 mv file1 newname        move or rename a file
 mv file1 ~/AAA/         move file1 into sub-directory AAA in your home directory.
@@ -123,11 +121,11 @@ rm -r dir1 [dir2...]    recursivly remove a directory and its contents BE CAREFU
 mkdir dir1 [dir2...]    create directories
 mkdir -p dirpath        create the directory dirpath, including all implied directories in the path.
 rmdir dir1 [dir2...]    remove an empty directory
-
+```
 
 Viewing and editing files:
 
-
+```
 cat filename      Dump a file to the screen in ascii. 
 more filename     Progressively dump a file to the screen: ENTER = one line down 
                   SPACEBAR = page down  q=quit
@@ -138,7 +136,7 @@ head filename     Show the first few lines of a file.
 head -n  filename Show the first n lines of a file.
 tail filename     Show the last few lines of a file.
 tail -n filename  Show the last n lines of a file.
-
+```
 
 Shells 
 
@@ -162,20 +160,20 @@ Environment variables
 
 You can teach your shell to remember things for later using environment variables.
 For example under the bash shell:
-
+```
 export CASROOT=/usr/local/CAS3.0               Defines the variable CASROOT with the value 
                                                /usr/local/CAS3.0.
 export LD_LIBRARY_PATH=$CASROOT/Linux/lib      Defines the variable LD_LIBRARY_PATH with 
-                                               the value of CASROOT with /Linux/lib appended, 
+```                                            the value of CASROOT with /Linux/lib appended, 
                                                or /usr/local/CAS3.0/Linux/lib 
 
 By prefixing $ to the variable name, you can evaluate it in any command:
-
+```
 cd $CASROOT         Changes your present working directory to the value of CASROOT
 
 echo $CASROOT       Prints out the value of CASROOT, or /usr/local/CAS3.0
 printenv CASROOT    Does the same thing in bash and some other shells. 
-
+```
 
 Interactive History
 
@@ -205,12 +203,12 @@ you all the completions. Bash is the default user shell for most Linux systems.
 
 Redirection:
 
-
+```
 grep string filename > newfile           Redirects the output of the above grep
                                          command to a file 'newfile'.
 grep string filename >> existfile        Appends the output of the grep command 
                                          to the end of 'existfile'.
-
+```
 The redirection directives, > and >> can be used on the output of most commands 
 to direct their output to a file.
 
@@ -221,7 +219,7 @@ The pipe symbol "|" is used to direct the output of one command to the input
 of another.
 
 For example:
-
+```
 ls -l | more   This commands takes the output of the long format directory list command 
                "ls -l" and pipes it through the more command (also known as a filter).
                In this case a very long list of files can be viewed a page at a time.
@@ -231,16 +229,16 @@ du -sc * | sort -n | tail
                current working directory. That is piped through "sort -n" which orders the 
                output from smallest to largest size. Finally, that output is piped through "tail"
                which displays only the last few (which just happen to be the largest) results.
-
+```
 Command Substitution
 
 
 You can use the output of one command as an input to another command in another way 
 called command substitution. Command substitution is invoked when by enclosing the 
 substituted command in backwards single quotes. For example:
-
+```
 cat `find . -name aaa.txt`
-
+```
 which will cat ( dump to the screen ) all the files named aaa.txt that exist in the current 
 directory or in any subdirectory tree. 
 
@@ -248,13 +246,13 @@ directory or in any subdirectory tree.
 
 Searching for strings in files: The grep  command
 
-
+```
 grep string filename    prints all the lines in a file that contain the string
-
+```
 
 Searching for files : The find command
 
-
+```
 find search_path -name filename 
 
 find . -name aaa.txt    Finds all the files named aaa.txt in the current directory or 
@@ -263,7 +261,7 @@ find / -name vimrc      Find all the files named 'vimrc' anywhere on the system.
 find /usr/local/games -name "*xpilot*"       
                         Find all files whose names contain the string 'xpilot' which 
                         exist within the '/usr/local/games' directory tree. 
-
+```
 
 Reading and writing tapes, backups, and archives: The tar command  
 
@@ -282,7 +280,7 @@ Likewise, if you want to write a tape to give to someone else, you should probab
 tar as well. 
 
 Tar examples:
-
+```
 tar xv      Extracts (x) files from the default tape drive while listing (v = verbose) 
             the file names to the screen.
 tar tv      Lists the files from the default tape device without extracting them. 
@@ -299,33 +297,33 @@ tar xvfz archive.tar.gz
             Extract a gzip compressed tar archive.  Does not work with all versions of tar. 
 tar cvfI archive.tar.bz2 dname   
             Create a bz2 compressed tar archive. Does not work with all versions of tar
-
+```
 
 File compression: compress, gzip, and bzip2
 
 
 The standard UNIX compression commands are compress and uncompress. Compressed files have 
 a suffix .Z added to their name. For example:
-
+```
 compress part.igs    Creates a compressed file part.igs.Z
 
 uncompress part.igs  Uncompresseis part.igs from the compressed file part.igs.Z.
                      Note the .Z is not required.
-
+```
 Another common compression utility is gzip (and gunzip). These are the GNU compress and 
 uncompress utilities.  gzip usually gives better compression than standard compress, 
 but may not be installed on all systems.  The suffix for gzipped files is .gz
-
+```
 gzip part.igs     Creates a compressed file part.igs.gz
 gunzip part.igs   Extracts the original file from part.igs.gz
-
+```
 The bzip2 utility has (in general) even better compression than gzip, but at the cost of longer 
 times to compress and uncompress the files. It is not as common a utility as gzip, but is 
 becoming more generally available. 
-
+```
 bzip2 part.igs       Create a compressed Iges file part.igs.bz2
 bunzip2 part.igs.bz2 Uncompress the compressed iges file. 
-
+```
 
 
 Looking for help: The man and apropos commands
@@ -335,23 +333,23 @@ detailed, sometimes cryptic and unfathomable discriptions of their usage. Some s
 are called man pages because they are only for real men. 
 
 Example:
-
+```
 man ls      Shows the manual page for the ls command
-
+```
 You can search through the man pages using apropos
 
 Example:
-
+```
 apropos build     Shows a list of all the man pages whose discriptions contain the word "build"
-
+```
 Do a man apropos for detailed help on apropos.
 
 
 Basics of the  vi editor
-
+```
                 Opening a file
 vi filename
-
+```
                 Creating text 
 Edit modes: These keys enter editing modes and type in the text
 of your document. 
@@ -423,7 +421,7 @@ left corner of the window. They are called "ex" commands because they are comman
 of the ex text editor - the precursor line editor to the screen editor 
 vi.   You cannot enter an "ex" command when you are in an edit mode (typing text onto the screen)
 Press <ESC> to exit from an editing mode.
-
+```
 :w                Write the current file.
 :w new.file       Write the file to the name 'new.file'.
 :w! existing.file Overwrite an existing file with the file currently being edited. 
@@ -435,5 +433,5 @@ Press <ESC> to exit from an editing mode.
 
 :set number       Turns on line numbering
 :set nonumber     Turns off line numbering
-
+```
 referenced from:http://freeengineer.org/learnUNIXin10minutes.html
