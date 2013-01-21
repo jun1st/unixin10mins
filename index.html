@@ -1,42 +1,39 @@
-<!doctype html>
-<!-- The Time Machine GitHub pages theme was designed and developed by Jon Rohan, on Feb 7, 2012. -->
-<!-- Follow him for fun. http://twitter.com/jonrohan. Tail his code on http://github.com/jonrohan -->
+<!DOCTYPE html>
 <html>
-<head>
-  <meta charset="utf-8">
-  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+  <head>
+    <meta charset='utf-8'>
+    <meta http-equiv="X-UA-Compatible" content="chrome=1">
+    <link href='https://fonts.googleapis.com/css?family=Chivo:900' rel='stylesheet' type='text/css'>
+    <link rel="stylesheet" type="text/css" href="stylesheets/stylesheet.css" media="screen" />
+    <link rel="stylesheet" type="text/css" href="stylesheets/pygment_trac.css" media="screen" />
+    <link rel="stylesheet" type="text/css" href="stylesheets/print.css" media="print" />
+    <!--[if lt IE 9]>
+    <script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+    <![endif]-->
+    <title>Unixin10mins by jun1st</title>
+  </head>
 
-  <link rel="stylesheet" href="stylesheets/stylesheet.css" media="screen"/>
-  <link rel="stylesheet" href="stylesheets/pygment_trac.css"/>
-  <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js"></script>
-  <script type="text/javascript" src="javascripts/script.js"></script>
-
-  <title>Unixin10mins</title>
-  <meta name="description" content="learn unix in 10 minutes">
-
-  <meta name="viewport" content="width=device-width,initial-scale=1">
-
-</head>
-
-<body>
-
-  <div class="wrapper">
-    <header>
-      <h1 class="title">Unixin10mins</h1>
-    </header>
+  <body>
     <div id="container">
-      <p class="tagline">learn unix in 10 minutes</p>
-      <div id="main" role="main">
-        <div class="download-bar">
-        <div class="inner">
-          <a href="https://github.com/jun1st/unixin10mins/tarball/master" class="download-button tar"><span>Download</span></a>
-          <a href="https://github.com/jun1st/unixin10mins/zipball/master" class="download-button zip"><span>Download</span></a>
-          <a href="https://github.com/jun1st/unixin10mins" class="code">View Unixin10mins on GitHub</a>
-        </div>
-        <span class="blc"></span><span class="trc"></span>
-        </div>
-        <article class="markdown-body">
-          <p>Learn UNIX in 10 minutes. Version 1.3   </p>
+      <div class="inner">
+
+        <header>
+          <h1>Unixin10mins</h1>
+          <h2>learn unix in 10 minutes</h2>
+        </header>
+
+        <section id="downloads" class="clearfix">
+          <a href="https://github.com/jun1st/unixin10mins/zipball/master" id="download-zip" class="button"><span>Download .zip</span></a>
+          <a href="https://github.com/jun1st/unixin10mins/tarball/master" id="download-tar-gz" class="button"><span>Download .tar.gz</span></a>
+          <a href="https://github.com/jun1st/unixin10mins" id="view-on-github" class="button"><span>View on GitHub</span></a>
+        </section>
+
+        <hr>
+
+        <section id="main_content">
+          <h1>unixin10mins</h1>
+
+<p>Learn UNIX in 10 minutes. Version 1.3   </p>
 
 <p>Preface</p>
 
@@ -51,31 +48,33 @@ gave them a tape). </p>
 Send me patches, comments, corrections, about whatever you think is wrong or should be 
 included. I am always happy to hear from you. Please include the word "UNIX" in your subject.</p>
 
-<p>Sections:</p>
+<h3>Sections:</h3>
 
-<p>Directories:
-Moving around the file system:
-Listing directory contents:
-Changing file permissions and attributes
-Moving, renaming, and copying files:
-Viewing and editing files:
-Shells 
-Environment variables
-Interactive History
-Filename Completion
-Bash is the way cool shell. 
-Redirection:
-Pipes:
-Command Substitution
-Searching for strings in files: The grep  command
-Searching for files : The find command
-Reading and writing tapes, backups, and archives: The tar command<br>
-File compression: compress, gzip, and bzip2
-Looking for help: The man and apropos commands
-Basics of the  vi editor
-FAQs</p>
+<p>Directories:</p>
 
-<hr><p>Basic UNIX Command Line (shell) navigation  : Last revised May 17 2001 </p>
+<ol>
+<li> Moving around the file system:</li>
+<li> Listing directory contents:</li>
+<li> Changing file permissions and attributes</li>
+<li> Moving, renaming, and copying files:</li>
+<li> Viewing and editing files:</li>
+<li> Shells </li>
+<li> Environment variables</li>
+<li> Interactive History</li>
+<li> Filename Completion</li>
+<li>Bash is the way cool shell. </li>
+<li>Redirection:</li>
+<li>Pipes:</li>
+<li>Command Substitution</li>
+<li>Searching for strings in files: The grep  command</li>
+<li>Searching for files : The find command</li>
+<li>Reading and writing tapes, backups, and archives: The tar command<br>
+</li>
+<li>File compression: compress, gzip, and bzip2</li>
+<li>Looking for help: The man and apropos commands</li>
+<li>Basics of the  vi editor</li>
+<li>FAQs</li>
+</ol><hr><p>Basic UNIX Command Line (shell) navigation  : Last revised May 17 2001 </p>
 
 <hr><p>Directories:</p>
 
@@ -84,71 +83,76 @@ to separate directory names in a path.</p>
 
 <p>examples:</p>
 
-<p>/              "root" directory
+<pre><code>/              "root" directory
 /usr           directory usr (sub-directory of / "root" directory)
-/usr/STRIM100  STRIM100 is a subdirectory of /usr</p>
+/usr/STRIM100  STRIM100 is a subdirectory of /usr
+</code></pre>
 
 <p>Moving around the file system:</p>
 
-<p>pwd               Show the "present working directory", or current directory.
+<pre><code>pwd               Show the "present working directory", or current directory.
 cd                Change current directory to your HOME directory.
 cd /usr/STRIM100  Change current directory to /usr/STRIM100.
-cd INIT           Change current directory to INIT which is a sub-directory of the current 
-                        directory.
+cd INIT           Change current directory to INIT which is a sub-directory of the current directory.
 cd ..             Change current directory to the parent directory of the current directory.
-cd $STRMWORK      Change current directory to the directory defined by the environment 
-                        variable 'STRMWORK'.
-cd ~bob           Change the current directory to the user bob's home directory (if you have permission).</p>
+cd $STRMWORK      Change current directory to the directory defined by the environment variable 'STRMWORK'.
+cd ~bob           Change the current directory to the user bob's home directory (if you have permission).
+</code></pre>
 
 <p>Listing directory contents:</p>
 
-<p>ls    list a directory
-ls -l    list a directory in long ( detailed ) format</p>
+<pre><code>ls    list a directory
+ls -l    list a directory in long ( detailed ) format
+</code></pre>
 
-<p>for example:
-$ ls -l 
-drwxr-xr-x    4 cliff    user        1024 Jun 18 09:40 WAITRON_EARNINGS
--rw-r--r--    1 cliff    user      767392 Jun  6 14:28 scanlib.tar.gz
-^ ^  ^  ^     ^   ^       ^           ^      ^    ^      ^
-| |  |  |     |   |       |           |      |    |      |<br>
-| |  |  |     | owner   group       size   date  time    name 
-| |  |  |     number of links to file or directory contents
-| |  |  permissions for world
-| |  permissions for members of group
-| permissions for owner of file: r = read, w = write, x = execute -=no permission
-type of file: - = normal file, d=directory, l = symbolic link, and others...</p>
+<p>for example:</p>
 
-<p>ls -a        List the current directory including hidden files. Hidden files start 
-             with "." 
-ls -ld *     List all the file and directory names in the current directory using 
-             long format. Without the "d" option, ls would list the contents 
-             of any sub-directory of the current. With the "d" option, ls 
-             just lists them like regular files. </p>
+<pre><code>   $ ls -l 
+   drwxr-xr-x    4 cliff    user        1024 Jun 18 09:40 WAITRON_EARNINGS
+   -rw-r--r--    1 cliff    user      767392 Jun  6 14:28 scanlib.tar.gz
+   ^ ^  ^  ^     ^   ^       ^           ^      ^    ^      ^
+   | |  |  |     |   |       |           |      |    |      |  
+   | |  |  |     | owner   group       size   date  time    name 
+   | |  |  |     number of links to file or directory contents
+   | |  |  permissions for world
+   | |  permissions for members of group
+   | permissions for owner of file: r = read, w = write, x = execute -=no permission
+   type of file: - = normal file, d=directory, l = symbolic link, and others...
+
+   ls -a        List the current directory including hidden files. Hidden files start 
+                with "." 
+   ls -ld *     List all the file and directory names in the current directory using 
+                long format. Without the "d" option, ls would list the contents 
+                of any sub-directory of the current. With the "d" option, ls 
+                just lists them like regular files. 
+</code></pre>
 
 <p>Changing file permissions and attributes</p>
 
-<p>chmod 755 file       Changes the permissions of file to be rwx for the owner, and rx for 
+<pre><code>chmod 755 file       Changes the permissions of file to be rwx for the owner, and rx for 
                      the group and the world. (7 = rwx = 111 binary. 5 = r-x = 101 binary)
 chgrp user file      Makes file belong to the group user.
 chown cliff file     Makes cliff the owner of file.
-chown -R cliff dir   Makes cliff the owner of dir and everything in its directory tree. </p>
+chown -R cliff dir   Makes cliff the owner of dir and everything in its directory tree. 
+</code></pre>
 
 <p>You must be the owner of the file/directory or be root before you can do any of these things. </p>
 
 <p>Moving, renaming, and copying files:</p>
 
-<p>cp file1 file2          copy a file
+<pre><code>cp file1 file2          copy a file
 mv file1 newname        move or rename a file
 mv file1 ~/AAA/         move file1 into sub-directory AAA in your home directory.
 rm file1 [file2 ...]    remove or delete a file
 rm -r dir1 [dir2...]    recursivly remove a directory and its contents BE CAREFUL!
 mkdir dir1 [dir2...]    create directories
 mkdir -p dirpath        create the directory dirpath, including all implied directories in the path.
-rmdir dir1 [dir2...]    remove an empty directory</p>
+rmdir dir1 [dir2...]    remove an empty directory
+</code></pre>
 
 <p>Viewing and editing files:</p>
 
-<p>cat filename      Dump a file to the screen in ascii. 
+<pre><code>cat filename      Dump a file to the screen in ascii. 
 more filename     Progressively dump a file to the screen: ENTER = one line down 
                   SPACEBAR = page down  q=quit
 less filename     Like more, but you can use Page-Up too. Not on all systems. 
@@ -157,7 +161,8 @@ emacs filename    Edit a file using the emacs editor. Not all systems will have 
 head filename     Show the first few lines of a file.
 head -n  filename Show the first n lines of a file.
 tail filename     Show the last few lines of a file.
-tail -n filename  Show the last n lines of a file.</p>
+tail -n filename  Show the last n lines of a file.
+</code></pre>
 
 <p>Shells </p>
 
@@ -180,18 +185,20 @@ primary purpose of most shells, not the interactive command line behavior. </p>
 <p>You can teach your shell to remember things for later using environment variables.
 For example under the bash shell:</p>
 
-<p>export CASROOT=/usr/local/CAS3.0               Defines the variable CASROOT with the value 
+<pre><code>export CASROOT=/usr/local/CAS3.0               Defines the variable CASROOT with the value 
                                                /usr/local/CAS3.0.
 export LD_LIBRARY_PATH=$CASROOT/Linux/lib      Defines the variable LD_LIBRARY_PATH with 
-                                               the value of CASROOT with /Linux/lib appended, 
-                                               or /usr/local/CAS3.0/Linux/lib </p>
+                                            the value of CASROOT with /Linux/lib appended, 
+                                               or /usr/local/CAS3.0/Linux/lib 
+</code></pre>
 
 <p>By prefixing $ to the variable name, you can evaluate it in any command:</p>
 
-<p>cd $CASROOT         Changes your present working directory to the value of CASROOT</p>
+<pre><code>cd $CASROOT         Changes your present working directory to the value of CASROOT
 
-<p>echo $CASROOT       Prints out the value of CASROOT, or /usr/local/CAS3.0
-printenv CASROOT    Does the same thing in bash and some other shells. </p>
+echo $CASROOT       Prints out the value of CASROOT, or /usr/local/CAS3.0
+printenv CASROOT    Does the same thing in bash and some other shells. 
+</code></pre>
 
 <p>Interactive History</p>
 
@@ -216,10 +223,11 @@ you all the completions. Bash is the default user shell for most Linux systems. 
 
 <p>Redirection:</p>
 
-<p>grep string filename &gt; newfile           Redirects the output of the above grep
+<pre><code>grep string filename &gt; newfile           Redirects the output of the above grep
                                          command to a file 'newfile'.
 grep string filename &gt;&gt; existfile        Appends the output of the grep command 
-                                         to the end of 'existfile'.</p>
+                                         to the end of 'existfile'.
+</code></pre>
 
 <p>The redirection directives, &gt; and &gt;&gt; can be used on the output of most commands 
 to direct their output to a file.</p>
@@ -231,15 +239,16 @@ of another.</p>
 
 <p>For example:</p>
 
-<p>ls -l | more   This commands takes the output of the long format directory list command 
+<pre><code>ls -l | more   This commands takes the output of the long format directory list command 
                "ls -l" and pipes it through the more command (also known as a filter).
-               In this case a very long list of files can be viewed a page at a time.</p>
+               In this case a very long list of files can be viewed a page at a time.
 
-<p>du -sc * | sort -n | tail<br>
+du -sc * | sort -n | tail  
                The command "du -sc" lists the sizes of all files and directories in the 
                current working directory. That is piped through "sort -n" which orders the 
                output from smallest to largest size. Finally, that output is piped through "tail"
-               which displays only the last few (which just happen to be the largest) results.</p>
+               which displays only the last few (which just happen to be the largest) results.
+</code></pre>
 
 <p>Command Substitution</p>
 
@@ -247,25 +256,28 @@ of another.</p>
 called command substitution. Command substitution is invoked when by enclosing the 
 substituted command in backwards single quotes. For example:</p>
 
-<p>cat <code>find . -name aaa.txt</code></p>
+<pre><code>cat `find . -name aaa.txt`
+</code></pre>
 
 <p>which will cat ( dump to the screen ) all the files named aaa.txt that exist in the current 
 directory or in any subdirectory tree. </p>
 
 <p>Searching for strings in files: The grep  command</p>
 
-<p>grep string filename    prints all the lines in a file that contain the string</p>
+<pre><code>grep string filename    prints all the lines in a file that contain the string
+</code></pre>
 
 <p>Searching for files : The find command</p>
 
-<p>find search_path -name filename </p>
+<pre><code>find search_path -name filename 
 
-<p>find . -name aaa.txt    Finds all the files named aaa.txt in the current directory or 
+find . -name aaa.txt    Finds all the files named aaa.txt in the current directory or 
                         any subdirectory tree. 
 find / -name vimrc      Find all the files named 'vimrc' anywhere on the system. 
-find /usr/local/games -name "*xpilot*"<br>
+find /usr/local/games -name "*xpilot*"       
                         Find all files whose names contain the string 'xpilot' which 
-                        exist within the '/usr/local/games' directory tree. </p>
+                        exist within the '/usr/local/games' directory tree. 
+</code></pre>
 
 <p>Reading and writing tapes, backups, and archives: The tar command  </p>
 
@@ -284,46 +296,50 @@ tar as well. </p>
 
 <p>Tar examples:</p>
 
-<p>tar xv      Extracts (x) files from the default tape drive while listing (v = verbose) 
+<pre><code>tar xv      Extracts (x) files from the default tape drive while listing (v = verbose) 
             the file names to the screen.
 tar tv      Lists the files from the default tape device without extracting them. 
-tar cv file1 file2<br>
+tar cv file1 file2      
             Write files 'file1' and 'file2' to the default tape device.
-tar cvf archive.tar file1 [file2...]<br>
+tar cvf archive.tar file1 [file2...]   
             Create a tar archive as a file "archive.tar" containing file1, 
             file2...etc.
 tar xvf archive.tar  extract from the archive file
-tar cvfz archive.tar.gz dname<br>
+tar cvfz archive.tar.gz dname    
             Create a gzip compressed tar archive containing everything in the directory 
             'dname'. This does not work with all versions of tar.
-tar xvfz archive.tar.gz<br>
+tar xvfz archive.tar.gz          
             Extract a gzip compressed tar archive.  Does not work with all versions of tar. 
-tar cvfI archive.tar.bz2 dname<br>
-            Create a bz2 compressed tar archive. Does not work with all versions of tar</p>
+tar cvfI archive.tar.bz2 dname   
+            Create a bz2 compressed tar archive. Does not work with all versions of tar
+</code></pre>
 
 <p>File compression: compress, gzip, and bzip2</p>
 
 <p>The standard UNIX compression commands are compress and uncompress. Compressed files have 
 a suffix .Z added to their name. For example:</p>
 
-<p>compress part.igs    Creates a compressed file part.igs.Z</p>
+<pre><code>compress part.igs    Creates a compressed file part.igs.Z
 
-<p>uncompress part.igs  Uncompresseis part.igs from the compressed file part.igs.Z.
-                     Note the .Z is not required.</p>
+uncompress part.igs  Uncompresseis part.igs from the compressed file part.igs.Z.
+                     Note the .Z is not required.
+</code></pre>
 
 <p>Another common compression utility is gzip (and gunzip). These are the GNU compress and 
 uncompress utilities.  gzip usually gives better compression than standard compress, 
 but may not be installed on all systems.  The suffix for gzipped files is .gz</p>
 
-<p>gzip part.igs     Creates a compressed file part.igs.gz
-gunzip part.igs   Extracts the original file from part.igs.gz</p>
+<pre><code>gzip part.igs     Creates a compressed file part.igs.gz
+gunzip part.igs   Extracts the original file from part.igs.gz
+</code></pre>
 
 <p>The bzip2 utility has (in general) even better compression than gzip, but at the cost of longer 
 times to compress and uncompress the files. It is not as common a utility as gzip, but is 
 becoming more generally available. </p>
 
-<p>bzip2 part.igs       Create a compressed Iges file part.igs.bz2
-bunzip2 part.igs.bz2 Uncompress the compressed iges file. </p>
+<pre><code>bzip2 part.igs       Create a compressed Iges file part.igs.bz2
+bunzip2 part.igs.bz2 Uncompress the compressed iges file. 
+</code></pre>
 
 <p>Looking for help: The man and apropos commands</p>
 
@@ -333,22 +349,23 @@ are called man pages because they are only for real men. </p>
 
 <p>Example:</p>
 
-<p>man ls      Shows the manual page for the ls command</p>
+<pre><code>man ls      Shows the manual page for the ls command
+</code></pre>
 
 <p>You can search through the man pages using apropos</p>
 
 <p>Example:</p>
 
-<p>apropos build     Shows a list of all the man pages whose discriptions contain the word "build"</p>
+<pre><code>apropos build     Shows a list of all the man pages whose discriptions contain the word "build"
+</code></pre>
 
 <p>Do a man apropos for detailed help on apropos.</p>
 
 <p>Basics of the  vi editor</p>
 
-<pre><code>            Opening a file
+<pre><code>                Opening a file
+vi filename
 </code></pre>
-
-<p>vi filename</p>
 
 <pre><code>            Creating text 
 </code></pre>
@@ -432,39 +449,29 @@ of the ex text editor - the precursor line editor to the screen editor
 vi.   You cannot enter an "ex" command when you are in an edit mode (typing text onto the screen)
 Press  to exit from an editing mode.</p>
 
-<p>:w                Write the current file.
+<pre><code>:w                Write the current file.
 :w new.file       Write the file to the name 'new.file'.
 :w! existing.file Overwrite an existing file with the file currently being edited. 
 :wq               Write the file and quit.
 :q                Quit.
-:q!               Quit with no changes.</p>
+:q!               Quit with no changes.
 
-<p>:e filename       Open the file 'filename' for editing.</p>
+:e filename       Open the file 'filename' for editing.
 
-<p>:set number       Turns on line numbering
-:set nonumber     Turns off line numbering</p>
+:set number       Turns on line numbering
+:set nonumber     Turns off line numbering
+</code></pre>
 
 <p>referenced from:<a href="http://freeengineer.org/learnUNIXin10minutes.html">http://freeengineer.org/learnUNIXin10minutes.html</a></p>
-        </article>
+        </section>
+
+        <footer>
+          Unixin10mins is maintained by <a href="https://github.com/jun1st">jun1st</a><br>
+          This page was generated by <a href="http://pages.github.com">GitHub Pages</a>. Tactile theme by <a href="http://twitter.com/jasonlong">Jason Long</a>.
+        </footer>
+
+        
       </div>
     </div>
-    <footer>
-      <div class="owner">
-      <p><a href="https://github.com/jun1st" class="avatar"><img src="https://secure.gravatar.com/avatar/5d59040e82b5fd59f9fdd8671b99a1c5?s=30&amp;d=https://a248.e.akamai.net/assets.github.com%2Fimages%2Fgravatars%2Fgravatar-user-420.png" width="48" height="48"/></a> <a href="https://github.com/jun1st">jun1st</a> maintains <a href="https://github.com/jun1st/unixin10mins">Unixin10mins</a></p>
-
-
-      </div>
-      <div class="creds">
-        <small>This page generated using <a href="https://pages.github.com/">GitHub Pages</a><br/>theme by <a href="http://twitter.com/jonrohan/">Jon Rohan</a></small>
-      </div>
-    </footer>
-  </div>
-  <div class="current-section">
-    <a href="#top">Scroll to top</a>
-    <a href="https://github.com/jun1st/unixin10mins/tarball/master" class="tar">tar</a><a href="https://github.com/jun1st/unixin10mins/zipball/master" class="zip">zip</a><a href="" class="code">source code</a>
-    <p class="name"></p>
-  </div>
-
-  
-</body>
+  </body>
 </html>
