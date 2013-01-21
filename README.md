@@ -16,29 +16,29 @@ Have an idea for this page?
 Send me patches, comments, corrections, about whatever you think is wrong or should be 
 included. I am always happy to hear from you. Please include the word "UNIX" in your subject.
 
-Sections:
+### Sections: ###
 
 Directories:
-Moving around the file system:
-Listing directory contents:
-Changing file permissions and attributes
-Moving, renaming, and copying files:
-Viewing and editing files:
-Shells 
-Environment variables
-Interactive History
-Filename Completion
-Bash is the way cool shell. 
-Redirection:
-Pipes:
-Command Substitution
-Searching for strings in files: The grep  command
-Searching for files : The find command
-Reading and writing tapes, backups, and archives: The tar command  
-File compression: compress, gzip, and bzip2
-Looking for help: The man and apropos commands
-Basics of the  vi editor
-FAQs
+ 1.  Moving around the file system:
+ 2.  Listing directory contents:
+ 3.  Changing file permissions and attributes
+ 4.  Moving, renaming, and copying files:
+ 5.  Viewing and editing files:
+ 6.  Shells 
+ 7.  Environment variables
+ 8.  Interactive History
+ 9.  Filename Completion
+ 10. Bash is the way cool shell. 
+ 11. Redirection:
+ 12. Pipes:
+ 13. Command Substitution
+ 14. Searching for strings in files: The grep  command
+ 15. Searching for files : The find command
+ 16. Reading and writing tapes, backups, and archives: The tar command  
+ 17. File compression: compress, gzip, and bzip2
+ 18. Looking for help: The man and apropos commands
+ 19. Basics of the  vi editor
+ 20. FAQs
 
 ******************************************************************************************
    Basic UNIX Command Line (shell) navigation  : Last revised May 17 2001 
@@ -53,49 +53,52 @@ to separate directory names in a path.
 
 examples:
 
-/              "root" directory
-/usr           directory usr (sub-directory of / "root" directory)
-/usr/STRIM100  STRIM100 is a subdirectory of /usr
+<code>
+   /        "root" directory
+   
+   /usr           directory usr (sub-directory of / "root" directory)
+   
+   /usr/STRIM100  STRIM100 is a subdirectory of /usr
+</code>
 
 Moving around the file system:
 
 
-pwd               Show the "present working directory", or current directory.
-cd                Change current directory to your HOME directory.
-cd /usr/STRIM100  Change current directory to /usr/STRIM100.
-cd INIT           Change current directory to INIT which is a sub-directory of the current 
-                        directory.
-cd ..             Change current directory to the parent directory of the current directory.
-cd $STRMWORK      Change current directory to the directory defined by the environment 
-                        variable 'STRMWORK'.
-cd ~bob           Change the current directory to the user bob's home directory (if you have permission).
+   `pwd               Show the "present working directory", or current directory.`
+   `cd                Change current directory to your HOME directory.`
+   `cd /usr/STRIM100  Change current directory to /usr/STRIM100.`
+   `cd INIT           Change current directory to INIT which is a sub-directory of the current directory.`
+   `cd ..             Change current directory to the parent directory of the current directory.`
+   `cd $STRMWORK      Change current directory to the directory defined by the environment variable 'STRMWORK'.`
+   `cd ~bob           Change the current directory to the user bob's home directory (if you have permission).`
 
 
 Listing directory contents:
 
 
-ls    list a directory
-ls -l    list a directory in long ( detailed ) format
+   ls    list a directory
+   ls -l    list a directory in long ( detailed ) format
 
-   for example:
-$ ls -l 
-drwxr-xr-x    4 cliff    user        1024 Jun 18 09:40 WAITRON_EARNINGS
--rw-r--r--    1 cliff    user      767392 Jun  6 14:28 scanlib.tar.gz
-^ ^  ^  ^     ^   ^       ^           ^      ^    ^      ^
-| |  |  |     |   |       |           |      |    |      |  
-| |  |  |     | owner   group       size   date  time    name 
-| |  |  |     number of links to file or directory contents
-| |  |  permissions for world
-| |  permissions for members of group
-| permissions for owner of file: r = read, w = write, x = execute -=no permission
-type of file: - = normal file, d=directory, l = symbolic link, and others...
+for example:
 
-ls -a        List the current directory including hidden files. Hidden files start 
-             with "." 
-ls -ld *     List all the file and directory names in the current directory using 
-             long format. Without the "d" option, ls would list the contents 
-             of any sub-directory of the current. With the "d" option, ls 
-             just lists them like regular files. 
+   $ ls -l 
+   drwxr-xr-x    4 cliff    user        1024 Jun 18 09:40 WAITRON_EARNINGS
+   -rw-r--r--    1 cliff    user      767392 Jun  6 14:28 scanlib.tar.gz
+   ^ ^  ^  ^     ^   ^       ^           ^      ^    ^      ^
+   | |  |  |     |   |       |           |      |    |      |  
+   | |  |  |     | owner   group       size   date  time    name 
+   | |  |  |     number of links to file or directory contents
+   | |  |  permissions for world
+   | |  permissions for members of group
+   | permissions for owner of file: r = read, w = write, x = execute -=no permission
+   type of file: - = normal file, d=directory, l = symbolic link, and others...
+
+   ls -a        List the current directory including hidden files. Hidden files start 
+                with "." 
+   ls -ld *     List all the file and directory names in the current directory using 
+                long format. Without the "d" option, ls would list the contents 
+                of any sub-directory of the current. With the "d" option, ls 
+                just lists them like regular files. 
 
 
 Changing file permissions and attributes
