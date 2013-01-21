@@ -164,9 +164,9 @@ For example under the bash shell:
 export CASROOT=/usr/local/CAS3.0               Defines the variable CASROOT with the value 
                                                /usr/local/CAS3.0.
 export LD_LIBRARY_PATH=$CASROOT/Linux/lib      Defines the variable LD_LIBRARY_PATH with 
-```                                            the value of CASROOT with /Linux/lib appended, 
+                                            the value of CASROOT with /Linux/lib appended, 
                                                or /usr/local/CAS3.0/Linux/lib 
-
+```
 By prefixing $ to the variable name, you can evaluate it in any command:
 ```
 cd $CASROOT         Changes your present working directory to the value of CASROOT
