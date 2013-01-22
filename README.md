@@ -1,24 +1,10 @@
-unixin10mins
+
+## Learn UNIX in 10 minutes. ##
 ============
+Original content is copied from [learnUNIXin10minutes](http://freeengineer.org/learnUNIXin10minutes.html)
 
-Learn UNIX in 10 minutes. Version 1.3   
 
-Preface
-
-This is something that I had given out to students (CAD user training) in years past. 
-The purpose was to have on one page the basics commands for getting started using 
-the UNIX shell (so that they didn't call me asking what to do the first time someone 
-gave them a tape). 
-
-This document is copyrighted but freely redistributable under the terms of the GFDL . 
-
-Have an idea for this page?  
-Send me patches, comments, corrections, about whatever you think is wrong or should be 
-included. I am always happy to hear from you. Please include the word "UNIX" in your subject.
-
-### Sections: ###
-
-Directories:
+### Directories: ###
  1.  Moving around the file system:
  2.  Listing directory contents:
  3.  Changing file permissions and attributes
@@ -45,7 +31,7 @@ Directories:
 ******************************************************************************************
 
 
-Directories:
+###Directories###
 
 
 File and directory paths in UNIX use the forward slash "/" 
@@ -59,7 +45,7 @@ examples:
 /usr/STRIM100  STRIM100 is a subdirectory of /usr
 ```
 
-Moving around the file system:
+###Moving around the file system###
 
 ```
 pwd               Show the "present working directory", or current directory.
@@ -71,7 +57,7 @@ cd $STRMWORK      Change current directory to the directory defined by the envir
 cd ~bob           Change the current directory to the user bob's home directory (if you have permission).
 ```
 
-Listing directory contents:
+### Listing directory contents ###
 
 ```
 ls    list a directory
@@ -99,7 +85,7 @@ for example:
                 just lists them like regular files. 
 ```
 
-Changing file permissions and attributes
+### Changing file permissions and attributes ###
 
 ```
 chmod 755 file       Changes the permissions of file to be rwx for the owner, and rx for 
@@ -110,7 +96,7 @@ chown -R cliff dir   Makes cliff the owner of dir and everything in its director
 ```
 You must be the owner of the file/directory or be root before you can do any of these things. 
 
-Moving, renaming, and copying files:
+### Moving, renaming, and copying files ###
 
 ```
 cp file1 file2          copy a file
@@ -123,7 +109,7 @@ mkdir -p dirpath        create the directory dirpath, including all implied dire
 rmdir dir1 [dir2...]    remove an empty directory
 ```
 
-Viewing and editing files:
+### Viewing and editing files ###
 
 ```
 cat filename      Dump a file to the screen in ascii. 
@@ -138,7 +124,7 @@ tail filename     Show the last few lines of a file.
 tail -n filename  Show the last n lines of a file.
 ```
 
-Shells 
+### Shells ###
 
 
 The behavior of the command line interface will differ slightly depending 
@@ -155,7 +141,7 @@ a program to perform a task. This is called a shell script. This is in fact the
 primary purpose of most shells, not the interactive command line behavior. 
 
 
-Environment variables
+### Environment variables ###
 
 
 You can teach your shell to remember things for later using environment variables.
@@ -175,7 +161,7 @@ echo $CASROOT       Prints out the value of CASROOT, or /usr/local/CAS3.0
 printenv CASROOT    Does the same thing in bash and some other shells. 
 ```
 
-Interactive History
+### Interactive History ###
 
 
 A feature of bash and tcsh (and sometimes others) you can use 
@@ -183,7 +169,7 @@ the up-arrow keys to access your previous commands, edit
 them, and re-execute them.
 
 
-Filename Completion
+### Filename Completion ###
 
 
 A feature of bash and tcsh (and possibly others) you can use the
@@ -194,14 +180,14 @@ and the shell will fill in the rest of the name for you (provided the
 completion is unique).
 
 
-Bash is the way cool shell. 
+### Bash is the way cool shell ###
 
 Bash will even complete the name of commands and environment variables.
 And if there are multiple completions, if you hit TAB twice bash will show
 you all the completions. Bash is the default user shell for most Linux systems. 
 
 
-Redirection:
+### Redirection ###
 
 ```
 grep string filename > newfile           Redirects the output of the above grep
@@ -212,7 +198,7 @@ grep string filename >> existfile        Appends the output of the grep command
 The redirection directives, > and >> can be used on the output of most commands 
 to direct their output to a file.
 
-Pipes:
+### Pipes ###
 
 
 The pipe symbol "|" is used to direct the output of one command to the input 
@@ -230,7 +216,7 @@ du -sc * | sort -n | tail
                output from smallest to largest size. Finally, that output is piped through "tail"
                which displays only the last few (which just happen to be the largest) results.
 ```
-Command Substitution
+### Command Substitution ###
 
 
 You can use the output of one command as an input to another command in another way 
@@ -244,13 +230,13 @@ directory or in any subdirectory tree.
 
 
 
-Searching for strings in files: The grep  command
+### Searching for strings in files: The grep  command ###
 
 ```
 grep string filename    prints all the lines in a file that contain the string
 ```
 
-Searching for files : The find command
+### Searching for files : The find command ###
 
 ```
 find search_path -name filename 
@@ -263,7 +249,7 @@ find /usr/local/games -name "*xpilot*"
                         exist within the '/usr/local/games' directory tree. 
 ```
 
-Reading and writing tapes, backups, and archives: The tar command  
+### Reading and writing tapes, backups, and archives: The tar command ###
 
 
 The tar command stands for "tape archive". It is the "standard" way to read 
@@ -299,7 +285,7 @@ tar cvfI archive.tar.bz2 dname
             Create a bz2 compressed tar archive. Does not work with all versions of tar
 ```
 
-File compression: compress, gzip, and bzip2
+### File compression: compress, gzip, and bzip2 ###
 
 
 The standard UNIX compression commands are compress and uncompress. Compressed files have 
@@ -326,7 +312,7 @@ bunzip2 part.igs.bz2 Uncompress the compressed iges file.
 ```
 
 
-Looking for help: The man and apropos commands
+### Looking for help: The man and apropos commands ###
 
 Most of the commands have a manual page which give sometimes useful, often more or less 
 detailed, sometimes cryptic and unfathomable discriptions of their usage. Some say they 
@@ -336,7 +322,7 @@ Example:
 ```
 man ls      Shows the manual page for the ls command
 ```
-You can search through the man pages using apropos
+### You can search through the man pages using apropos ###
 
 Example:
 ```
@@ -345,7 +331,7 @@ apropos build     Shows a list of all the man pages whose discriptions contain t
 Do a man apropos for detailed help on apropos.
 
 
-Basics of the  vi editor
+### Basics of the  vi editor ###
 ```
                 Opening a file
 vi filename
@@ -434,4 +420,4 @@ Press <ESC> to exit from an editing mode.
 :set number       Turns on line numbering
 :set nonumber     Turns off line numbering
 ```
-referenced from:http://freeengineer.org/learnUNIXin10minutes.html
+
