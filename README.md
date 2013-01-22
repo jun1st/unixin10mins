@@ -1,4 +1,3 @@
-
 ## Learn UNIX in 10 minutes. ##
 ============
 Original content is copied from [learnUNIXin10minutes](http://freeengineer.org/learnUNIXin10minutes.html)
@@ -65,24 +64,24 @@ ls -l    list a directory in long ( detailed ) format
 ```
 for example:
 ```
-   $ ls -l 
-   drwxr-xr-x    4 cliff    user        1024 Jun 18 09:40 WAITRON_EARNINGS
-   -rw-r--r--    1 cliff    user      767392 Jun  6 14:28 scanlib.tar.gz
-   ^ ^  ^  ^     ^   ^       ^           ^      ^    ^      ^
-   | |  |  |     |   |       |           |      |    |      |  
-   | |  |  |     | owner   group       size   date  time    name 
-   | |  |  |     number of links to file or directory contents
-   | |  |  permissions for world
-   | |  permissions for members of group
-   | permissions for owner of file: r = read, w = write, x = execute -=no permission
-   type of file: - = normal file, d=directory, l = symbolic link, and others...
+$ ls -l 
+drwxr-xr-x    4 cliff    user        1024 Jun 18 09:40 WAITRON_EARNINGS
+-rw-r--r--    1 cliff    user      767392 Jun  6 14:28 scanlib.tar.gz
+^ ^  ^  ^     ^   ^       ^           ^      ^    ^      ^
+| |  |  |     |   |       |           |      |    |      |  
+| |  |  |     | owner   group       size   date  time    name 
+| |  |  |     number of links to file or directory contents
+| |  |  permissions for world
+| |  permissions for members of group
+| permissions for owner of file: r = read, w = write, x = execute -=no permission
+type of file: - = normal file, d=directory, l = symbolic link, and others...
 
-   ls -a        List the current directory including hidden files. Hidden files start 
-                with "." 
-   ls -ld *     List all the file and directory names in the current directory using 
-                long format. Without the "d" option, ls would list the contents 
-                of any sub-directory of the current. With the "d" option, ls 
-                just lists them like regular files. 
+ls -a        List the current directory including hidden files. Hidden files start 
+             with "." 
+ls -ld *     List all the file and directory names in the current directory using 
+             long format. Without the "d" option, ls would list the contents 
+             of any sub-directory of the current. With the "d" option, ls 
+             just lists them like regular files. 
 ```
 
 ### Changing file permissions and attributes ###
@@ -134,7 +133,9 @@ Depending on the shell used, some extra behaviors can be quite nifty.
 
 You can find out what shell you are using by the command:
 
-    echo $SHELL
+```
+echo $SHELL
+```
 
 Of course you can create a file with a list of shell commands and execute it like
 a program to perform a task. This is called a shell script. This is in fact the 
@@ -332,14 +333,16 @@ Do a man apropos for detailed help on apropos.
 
 
 ### Basics of the  vi editor ###
+
+#### Opening a file ####
 ```
-                Opening a file
 vi filename
 ```
-                Creating text 
+
+#### Creating text ####
 Edit modes: These keys enter editing modes and type in the text
 of your document. 
-
+```
 i     Insert before current cursor position
 I     Insert at beginning of current line
 a     Insert (append) after current cursor position
@@ -347,25 +350,30 @@ A     Append to end of line
 r     Replace 1 character
 R     Replace mode
 <ESC> Terminate insertion or overwrite mode
+```
 
-                 Deletion of text
-
+#### Deletion of text ####
+```
 x     Delete single character
 dd    Delete current line and put in buffer
 ndd   Delete n lines (n is a number) and put them in buffer
 J     Attaches the next line to the end of the current line (deletes carriage return).
+```
 
-                 Oops
-
+#### Oops ####
+```
 u     Undo last command
-
-                 cut and paste
+```
+                 
+#### cut and paste ####
+```
 yy    Yank current line into buffer
 nyy   Yank n lines into buffer
 p     Put the contents of the buffer after the current line
 P     Put the contents of the buffer before the current line
-
-                cursor positioning
+```
+#### cursor positioning ####
+```
 ^d    Page down
 ^u    Page up
 :n    Position cursor at line n
@@ -373,9 +381,10 @@ P     Put the contents of the buffer before the current line
 ^g    Display current line number
 h,j,k,l Left,Down,Up, and Right respectivly. Your arrow keys should also work if
       if your keyboard mappings are anywhere near sane.
+```
 
-               string substitution
-
+#### string substitution ####
+```
 :n1,n2:s/string1/string2/[g]       Substitute string2 for string1 on lines
                                    n1 to n2. If g is included (meaning global),  
                                    all instances of string1 on each line
@@ -386,12 +395,12 @@ h,j,k,l Left,Down,Up, and Right respectivly. Your arrow keys should also work if
     ^ matches start of line
     . matches any single character
     $ matches end of line
-
+```
 These and other "special characters" (like the forward slash) can be "escaped" with \
 i.e to match the string "/usr/STRIM100/SOFT" say "\/usr\/STRIM100\/SOFT" 
 
 Examples:
-
+```
 :1,$:s/dog/cat/g                   Substitute 'cat' for 'dog', every instance
                                    for the entire file - lines 1 to $ (end of file)
 
@@ -399,8 +408,9 @@ Examples:
                                    23 through 25. Only the first instance 
                                    on each line is substituted.
 
+```
 
-              Saving and quitting and other "ex" commands
+#### Saving and quitting and other "ex" commands ####
 
 These commands are all prefixed by pressing colon (:) and then entered in the lower
 left corner of the window. They are called "ex" commands because they are commands
