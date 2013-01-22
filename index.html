@@ -31,26 +31,13 @@
         <hr>
 
         <section id="main_content">
-          <h1>unixin10mins</h1>
+          <h2>Learn UNIX in 10 minutes.</h2>
 
-<p>Learn UNIX in 10 minutes. Version 1.3   </p>
+<h1></h1>
 
-<p>Preface</p>
+<p>Original content is copied from <a href="http://freeengineer.org/learnUNIXin10minutes.html">learnUNIXin10minutes</a></p>
 
-<p>This is something that I had given out to students (CAD user training) in years past. 
-The purpose was to have on one page the basics commands for getting started using 
-the UNIX shell (so that they didn't call me asking what to do the first time someone 
-gave them a tape). </p>
-
-<p>This document is copyrighted but freely redistributable under the terms of the GFDL . </p>
-
-<p>Have an idea for this page?<br>
-Send me patches, comments, corrections, about whatever you think is wrong or should be 
-included. I am always happy to hear from you. Please include the word "UNIX" in your subject.</p>
-
-<h3>Sections:</h3>
-
-<p>Directories:</p>
+<h3>Directories:</h3>
 
 <ol>
 <li> Moving around the file system:</li>
@@ -76,7 +63,7 @@ included. I am always happy to hear from you. Please include the word "UNIX" in 
 <li>FAQs</li>
 </ol><hr><p>Basic UNIX Command Line (shell) navigation  : Last revised May 17 2001 </p>
 
-<hr><p>Directories:</p>
+<hr><h3>Directories</h3>
 
 <p>File and directory paths in UNIX use the forward slash "/" 
 to separate directory names in a path.</p>
@@ -88,7 +75,7 @@ to separate directory names in a path.</p>
 /usr/STRIM100  STRIM100 is a subdirectory of /usr
 </code></pre>
 
-<p>Moving around the file system:</p>
+<h3>Moving around the file system</h3>
 
 <pre><code>pwd               Show the "present working directory", or current directory.
 cd                Change current directory to your HOME directory.
@@ -99,7 +86,7 @@ cd $STRMWORK      Change current directory to the directory defined by the envir
 cd ~bob           Change the current directory to the user bob's home directory (if you have permission).
 </code></pre>
 
-<p>Listing directory contents:</p>
+<h3>Listing directory contents</h3>
 
 <pre><code>ls    list a directory
 ls -l    list a directory in long ( detailed ) format
@@ -107,27 +94,27 @@ ls -l    list a directory in long ( detailed ) format
 
 <p>for example:</p>
 
-<pre><code>   $ ls -l 
-   drwxr-xr-x    4 cliff    user        1024 Jun 18 09:40 WAITRON_EARNINGS
-   -rw-r--r--    1 cliff    user      767392 Jun  6 14:28 scanlib.tar.gz
-   ^ ^  ^  ^     ^   ^       ^           ^      ^    ^      ^
-   | |  |  |     |   |       |           |      |    |      |  
-   | |  |  |     | owner   group       size   date  time    name 
-   | |  |  |     number of links to file or directory contents
-   | |  |  permissions for world
-   | |  permissions for members of group
-   | permissions for owner of file: r = read, w = write, x = execute -=no permission
-   type of file: - = normal file, d=directory, l = symbolic link, and others...
+<pre><code>$ ls -l 
+drwxr-xr-x    4 cliff    user        1024 Jun 18 09:40 WAITRON_EARNINGS
+-rw-r--r--    1 cliff    user      767392 Jun  6 14:28 scanlib.tar.gz
+^ ^  ^  ^     ^   ^       ^           ^      ^    ^      ^
+| |  |  |     |   |       |           |      |    |      |  
+| |  |  |     | owner   group       size   date  time    name 
+| |  |  |     number of links to file or directory contents
+| |  |  permissions for world
+| |  permissions for members of group
+| permissions for owner of file: r = read, w = write, x = execute -=no permission
+type of file: - = normal file, d=directory, l = symbolic link, and others...
 
-   ls -a        List the current directory including hidden files. Hidden files start 
-                with "." 
-   ls -ld *     List all the file and directory names in the current directory using 
-                long format. Without the "d" option, ls would list the contents 
-                of any sub-directory of the current. With the "d" option, ls 
-                just lists them like regular files. 
+ls -a        List the current directory including hidden files. Hidden files start 
+             with "." 
+ls -ld *     List all the file and directory names in the current directory using 
+             long format. Without the "d" option, ls would list the contents 
+             of any sub-directory of the current. With the "d" option, ls 
+             just lists them like regular files. 
 </code></pre>
 
-<p>Changing file permissions and attributes</p>
+<h3>Changing file permissions and attributes</h3>
 
 <pre><code>chmod 755 file       Changes the permissions of file to be rwx for the owner, and rx for 
                      the group and the world. (7 = rwx = 111 binary. 5 = r-x = 101 binary)
@@ -138,7 +125,7 @@ chown -R cliff dir   Makes cliff the owner of dir and everything in its director
 
 <p>You must be the owner of the file/directory or be root before you can do any of these things. </p>
 
-<p>Moving, renaming, and copying files:</p>
+<h3>Moving, renaming, and copying files</h3>
 
 <pre><code>cp file1 file2          copy a file
 mv file1 newname        move or rename a file
@@ -150,7 +137,7 @@ mkdir -p dirpath        create the directory dirpath, including all implied dire
 rmdir dir1 [dir2...]    remove an empty directory
 </code></pre>
 
-<p>Viewing and editing files:</p>
+<h3>Viewing and editing files</h3>
 
 <pre><code>cat filename      Dump a file to the screen in ascii. 
 more filename     Progressively dump a file to the screen: ENTER = one line down 
@@ -164,7 +151,7 @@ tail filename     Show the last few lines of a file.
 tail -n filename  Show the last n lines of a file.
 </code></pre>
 
-<p>Shells </p>
+<h3>Shells</h3>
 
 <p>The behavior of the command line interface will differ slightly depending 
 on the shell program that is being used. </p>
@@ -180,7 +167,7 @@ on the shell program that is being used. </p>
 a program to perform a task. This is called a shell script. This is in fact the 
 primary purpose of most shells, not the interactive command line behavior. </p>
 
-<p>Environment variables</p>
+<h3>Environment variables</h3>
 
 <p>You can teach your shell to remember things for later using environment variables.
 For example under the bash shell:</p>
@@ -200,13 +187,13 @@ echo $CASROOT       Prints out the value of CASROOT, or /usr/local/CAS3.0
 printenv CASROOT    Does the same thing in bash and some other shells. 
 </code></pre>
 
-<p>Interactive History</p>
+<h3>Interactive History</h3>
 
 <p>A feature of bash and tcsh (and sometimes others) you can use 
 the up-arrow keys to access your previous commands, edit 
 them, and re-execute them.</p>
 
-<p>Filename Completion</p>
+<h3>Filename Completion</h3>
 
 <p>A feature of bash and tcsh (and possibly others) you can use the
 TAB key to complete a partially typed filename. For example if you
@@ -215,13 +202,13 @@ directory and want to edit it you can type 'vi const', hit the TAB key,
 and the shell will fill in the rest of the name for you (provided the 
 completion is unique).</p>
 
-<p>Bash is the way cool shell. </p>
+<h3>Bash is the way cool shell</h3>
 
 <p>Bash will even complete the name of commands and environment variables.
 And if there are multiple completions, if you hit TAB twice bash will show
 you all the completions. Bash is the default user shell for most Linux systems. </p>
 
-<p>Redirection:</p>
+<h3>Redirection</h3>
 
 <pre><code>grep string filename &gt; newfile           Redirects the output of the above grep
                                          command to a file 'newfile'.
@@ -232,7 +219,7 @@ grep string filename &gt;&gt; existfile        Appends the output of the grep co
 <p>The redirection directives, &gt; and &gt;&gt; can be used on the output of most commands 
 to direct their output to a file.</p>
 
-<p>Pipes:</p>
+<h3>Pipes</h3>
 
 <p>The pipe symbol "|" is used to direct the output of one command to the input 
 of another.</p>
@@ -250,7 +237,7 @@ du -sc * | sort -n | tail
                which displays only the last few (which just happen to be the largest) results.
 </code></pre>
 
-<p>Command Substitution</p>
+<h3>Command Substitution</h3>
 
 <p>You can use the output of one command as an input to another command in another way 
 called command substitution. Command substitution is invoked when by enclosing the 
@@ -262,12 +249,12 @@ substituted command in backwards single quotes. For example:</p>
 <p>which will cat ( dump to the screen ) all the files named aaa.txt that exist in the current 
 directory or in any subdirectory tree. </p>
 
-<p>Searching for strings in files: The grep  command</p>
+<h3>Searching for strings in files: The grep  command</h3>
 
 <pre><code>grep string filename    prints all the lines in a file that contain the string
 </code></pre>
 
-<p>Searching for files : The find command</p>
+<h3>Searching for files : The find command</h3>
 
 <pre><code>find search_path -name filename 
 
@@ -279,7 +266,7 @@ find /usr/local/games -name "*xpilot*"
                         exist within the '/usr/local/games' directory tree. 
 </code></pre>
 
-<p>Reading and writing tapes, backups, and archives: The tar command  </p>
+<h3>Reading and writing tapes, backups, and archives: The tar command</h3>
 
 <p>The tar command stands for "tape archive". It is the "standard" way to read 
 and write archives (collections of files and whole directory trees).</p>
@@ -314,7 +301,7 @@ tar cvfI archive.tar.bz2 dname
             Create a bz2 compressed tar archive. Does not work with all versions of tar
 </code></pre>
 
-<p>File compression: compress, gzip, and bzip2</p>
+<h3>File compression: compress, gzip, and bzip2</h3>
 
 <p>The standard UNIX compression commands are compress and uncompress. Compressed files have 
 a suffix .Z added to their name. For example:</p>
@@ -341,7 +328,7 @@ becoming more generally available. </p>
 bunzip2 part.igs.bz2 Uncompress the compressed iges file. 
 </code></pre>
 
-<p>Looking for help: The man and apropos commands</p>
+<h3>Looking for help: The man and apropos commands</h3>
 
 <p>Most of the commands have a manual page which give sometimes useful, often more or less 
 detailed, sometimes cryptic and unfathomable discriptions of their usage. Some say they 
@@ -352,7 +339,7 @@ are called man pages because they are only for real men. </p>
 <pre><code>man ls      Shows the manual page for the ls command
 </code></pre>
 
-<p>You can search through the man pages using apropos</p>
+<h3>You can search through the man pages using apropos</h3>
 
 <p>Example:</p>
 
@@ -361,71 +348,71 @@ are called man pages because they are only for real men. </p>
 
 <p>Do a man apropos for detailed help on apropos.</p>
 
-<p>Basics of the  vi editor</p>
+<h3>Basics of the  vi editor</h3>
 
-<pre><code>                Opening a file
-vi filename
+<h4>Opening a file</h4>
+
+<pre><code>vi filename
 </code></pre>
 
-<pre><code>            Creating text 
-</code></pre>
+<h4>Creating text</h4>
 
 <p>Edit modes: These keys enter editing modes and type in the text
 of your document. </p>
 
-<p>i     Insert before current cursor position
+<pre><code>i     Insert before current cursor position
 I     Insert at beginning of current line
 a     Insert (append) after current cursor position
 A     Append to end of line
 r     Replace 1 character
 R     Replace mode
- Terminate insertion or overwrite mode</p>
-
-<pre><code>             Deletion of text
+&lt;ESC&gt; Terminate insertion or overwrite mode
 </code></pre>
 
-<p>x     Delete single character
+<h4>Deletion of text</h4>
+
+<pre><code>x     Delete single character
 dd    Delete current line and put in buffer
 ndd   Delete n lines (n is a number) and put them in buffer
-J     Attaches the next line to the end of the current line (deletes carriage return).</p>
-
-<pre><code>             Oops
+J     Attaches the next line to the end of the current line (deletes carriage return).
 </code></pre>
 
-<p>u     Undo last command</p>
+<h4>Oops</h4>
 
-<pre><code>             cut and paste
+<pre><code>u     Undo last command
 </code></pre>
 
-<p>yy    Yank current line into buffer
+<h4>cut and paste</h4>
+
+<pre><code>yy    Yank current line into buffer
 nyy   Yank n lines into buffer
 p     Put the contents of the buffer after the current line
-P     Put the contents of the buffer before the current line</p>
-
-<pre><code>            cursor positioning
+P     Put the contents of the buffer before the current line
 </code></pre>
 
-<p>^d    Page down
+<h4>cursor positioning</h4>
+
+<pre><code>^d    Page down
 ^u    Page up
 :n    Position cursor at line n
 :$    Position cursor at end of file
 ^g    Display current line number
 h,j,k,l Left,Down,Up, and Right respectivly. Your arrow keys should also work if
-      if your keyboard mappings are anywhere near sane.</p>
-
-<pre><code>           string substitution
+      if your keyboard mappings are anywhere near sane.
 </code></pre>
 
-<p>:n1,n2:s/string1/string2/[g]       Substitute string2 for string1 on lines
-                                   n1 to n2. If g is included (meaning global),<br>
+<h4>string substitution</h4>
+
+<pre><code>:n1,n2:s/string1/string2/[g]       Substitute string2 for string1 on lines
+                                   n1 to n2. If g is included (meaning global),  
                                    all instances of string1 on each line
                                    are substituted. If g is not included,
                                    only the first instance per matching line is
-                                   substituted.</p>
+                                   substituted.
 
-<pre><code>^ matches start of line
-. matches any single character
-$ matches end of line
+    ^ matches start of line
+    . matches any single character
+    $ matches end of line
 </code></pre>
 
 <p>These and other "special characters" (like the forward slash) can be "escaped" with \
@@ -433,15 +420,16 @@ i.e to match the string "/usr/STRIM100/SOFT" say "\/usr\/STRIM100\/SOFT" </p>
 
 <p>Examples:</p>
 
-<p>:1,$:s/dog/cat/g                   Substitute 'cat' for 'dog', every instance
-                                   for the entire file - lines 1 to $ (end of file)</p>
+<pre><code>:1,$:s/dog/cat/g                   Substitute 'cat' for 'dog', every instance
+                                   for the entire file - lines 1 to $ (end of file)
 
-<p>:23,25:/frog/bird/                 Substitute 'bird' for 'frog' on lines
+:23,25:/frog/bird/                 Substitute 'bird' for 'frog' on lines
                                    23 through 25. Only the first instance 
-                                   on each line is substituted.</p>
+                                   on each line is substituted.
 
-<pre><code>          Saving and quitting and other "ex" commands
 </code></pre>
+
+<h4>Saving and quitting and other "ex" commands</h4>
 
 <p>These commands are all prefixed by pressing colon (:) and then entered in the lower
 left corner of the window. They are called "ex" commands because they are commands
@@ -461,8 +449,6 @@ Press  to exit from an editing mode.</p>
 :set number       Turns on line numbering
 :set nonumber     Turns off line numbering
 </code></pre>
-
-<p>referenced from:<a href="http://freeengineer.org/learnUNIXin10minutes.html">http://freeengineer.org/learnUNIXin10minutes.html</a></p>
         </section>
 
         <footer>
